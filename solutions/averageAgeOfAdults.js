@@ -16,7 +16,9 @@ You do not have to deal with the case, when there are only underage users in the
 */
 
 function averageAgeOfAdults(users) {
-
+const adults = users.filter(user => user.age >= 18);
+const totalAge = adults.reduce((sum, user) => sum + user.age,0);
+const averageAge = totalAge / adults.length;
+return  averageAge;
 }
-
 module.exports = averageAgeOfAdults;
