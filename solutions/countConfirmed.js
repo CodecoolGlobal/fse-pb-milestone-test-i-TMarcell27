@@ -15,7 +15,10 @@ If you receive an array which contains only one user object where the isConfirme
 */
 
 function countConfirmed(users) {
-
+if (users.length === 1 && users[0].isConfirmed === true){
+  return 1;
+}
+return users.filter(user => user.isConfirmed === ture).length;
 }
 
 module.exports = countConfirmed;
